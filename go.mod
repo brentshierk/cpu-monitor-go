@@ -1,4 +1,4 @@
-module cpuMonitor-go
+module cpu-monitor-go
 
 go 1.17
 

@@ -1,13 +1,18 @@
 package main
 
 import (
-	"log"
+	utils "cpu-monitor-go/util"
+	"fmt"
 	ui "github.com/gizak/termui/v3"
 	"github.com/gizak/termui/v3/widgets"
-	"github.com/brentshierk/cpu-monitor-go/src/util"
+	"log"
 )
 
 func main() {
+	utils.TempToFarenhiet(3)
+	utils.Temp()
+	utils.XDF()
+	fmt.Println(utils.TempToFarenhiet(3))
 	if err := ui.Init(); err != nil {
 		log.Fatalf("failed to initialize termui: %v", err)
 	}
