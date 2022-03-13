@@ -26,3 +26,17 @@ func BytesToGB(b uint64)float64  {
 func BytesToTB(b uint64)float64{
 	return float64(b)/float64(TB)
 }
+func ConvertBytes(b uint64) (float64, string) {
+switch {
+case b < KB:
+return float64(b), "B"
+case b < MB:
+return BytesToKB(b), "KB"
+case b < GB:
+return BytesToMB(b), "MB"
+case b < TB:
+return BytesToGB(b), "GB"
+default:
+return BytesToTB(b), "TB"
+}
+}
