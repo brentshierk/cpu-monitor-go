@@ -1,7 +1,13 @@
 package util
 
-import "fmt"
+import (
+	"strings"
+)
 
-func Temp()  {
-	fmt.Println("conversions")
+func ConvertLocalizedString(s string) string {
+	if strings.ContainsAny(s, ",") {
+		return strings.Replace(s, ",", ".", 1)
+	} else {
+		return s
+	}
 }
